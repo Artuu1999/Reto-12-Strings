@@ -82,6 +82,9 @@ if __name__ == "__main__":
 ```
 De la siguiente manera se ve el código funcionando:
 
+![image](https://github.com/Artuu1999/Reto-12-Strings/assets/124615034/5bb7c9a9-043d-4a54-9b5c-e69f433d3699)
+
+
 ## Ejemplo No. 2
 Diseñar un código el cual al ejecutarse determine la cantidad de consonantes que contiene el archivo procesado anteriormente.
 El siguiente código soluciona el problema descrito anteriormente:
@@ -103,6 +106,9 @@ if __name__ == "__main__":
      print("La cantidad de consonantes en el texto procesado es de: "+str(contadorConsonantes(file.read()))+"")
 ```
 Al ejecutarse se evidencia de la siguiente manera:
+
+![image](https://github.com/Artuu1999/Reto-12-Strings/assets/124615034/cec98c7a-9dc5-4120-94a4-26695205c068)
+
 
 ## Ejemplo No. 3
 Diseñar un programa en python que indique las 50 palabras que más se  repiten en el texto.
@@ -154,6 +160,9 @@ if __name__ == "__main__":
 ```
 Al correr el programa se evidencia así:
 
+![image](https://github.com/Artuu1999/Reto-12-Strings/assets/124615034/7488feee-99a8-49db-ad24-fd77a02aa2ec)
+
+
 ## Ejemplo No. 5
 Diseñar un código que de como resultado la cantidad de mensajes enviados por día, del texto procesado anteriormente.
 La solución a dicho problema:
@@ -200,6 +209,9 @@ if __name__ == "__main__":
             print("El día " + str(dia) + " de enero de 2008 se enviaron " + str(cantidad) + " mensajes")
 ```
 Ejecutando el programa se ve de la siguiente manera:
+
+![image](https://github.com/Artuu1999/Reto-12-Strings/assets/124615034/684aa04b-22a0-483a-8dc6-0a40476412fb)
+
 
 ## Fin
 Hasta acá llega nuestro camino en el presente repo, espero que haya sido de tu interés, si encuentras algún error o alguna inconsistencia, no dudes en contactarme y hacermela saber.
