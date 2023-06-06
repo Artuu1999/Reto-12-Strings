@@ -114,6 +114,31 @@ Al ejecutarse se evidencia de la siguiente manera:
 Diseñar un programa en python que indique las 50 palabras que más se  repiten en el texto.
 A continuación el código solución en Python:
 ```sh
+def obtenerPalabrasFrecuentes():
+    archivo = 'mbox-short (1).txt' # Nombrar al texto con una variable
+    with open(archivo, "r") as archivoTexto: # Abrir el archivo y leerlo
+        dicpalabras = {}
+
+        for line in archivoTexto:
+            linea = line.split()
+            for palabra in linea:
+                if palabra in dicpalabras:
+                    dicpalabras[palabra] += 1
+                else:
+                    dicpalabras[palabra] = 1
+
+        listadepalabras = list(dicpalabras.items())
+        listadepalabras.sort(key=lambda x: x[1], reverse=True)
+        c50palabras = listadepalabras[:50]
+
+        return c50palabras
+
+# Llamar a la función y imprimir el resultado    
+if __name__ == "__main__":
+    palabras_frecuentes = obtenerPalabrasFrecuentes()
+    print("Palabras que más aparecen:")
+    for palabra, veces in palabras_frecuentes:
+        print(palabra, ":", veces)
 
 ```
 Así se ve el programa al ejecutarse
