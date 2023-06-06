@@ -114,34 +114,39 @@ Al ejecutarse se evidencia de la siguiente manera:
 Diseñar un programa en python que indique las 50 palabras que más se  repiten en el texto.
 A continuación el código solución en Python:
 ```sh
+#Definimos una función para hallar la palabras más frecuentes
 def obtenerPalabrasFrecuentes():
-    archivo = 'mbox-short (1).txt' # Nombrar al texto con una variable
-    with open(archivo, "r") as archivoTexto: # Abrir el archivo y leerlo
-        dicpalabras = {}
-
-        for line in archivoTexto:
-            linea = line.split()
-            for palabra in linea:
-                if palabra in dicpalabras:
-                    dicpalabras[palabra] += 1
+    archivo = 'mbox-short (1).txt'  # Nombrar al texto con una variable
+    with open(archivo, "r") as archivoTexto:  # Abrir el archivo y leerlo
+        palabrasFrecuentes = {} #Crear un diccionario vacio en el que se incluirá los elementos
+        for line in archivoTexto: #Ciclo for para iterar sobre cada línea del texto
+            linea = line.split() #Separar el texto
+            for palabra in linea: #Ciclo for para iterar sobre cada palabra en la línea
+                #Condicional para verificar aparición y actualizar con cada aparición
+                if palabra in palabrasFrecuentes:
+                    palabrasFrecuentes[palabra] += 1
                 else:
-                    dicpalabras[palabra] = 1
-
-        listadepalabras = list(dicpalabras.items())
-        listadepalabras.sort(key=lambda x: x[1], reverse=True)
-        c50palabras = listadepalabras[:50]
-
-        return c50palabras
-
+                    palabrasFrecuentes[palabra] = 1
+        #Convertir el diccionario en una lista
+        frecuencia = list(palabrasFrecuentes.items())
+        #Ordenar la lista por frecuencia de manera descendente
+        frecuencia.sort(key=lambda x: x[1], reverse=True)
+        listadoPalabras = frecuencia[:50] #Obtener las 50 palabras más frecuentes
+        return listadoPalabras #Retornar la función
+    
 # Llamar a la función y imprimir el resultado    
 if __name__ == "__main__":
-    palabras_frecuentes = obtenerPalabrasFrecuentes()
-    print("Palabras que más aparecen:")
-    for palabra, veces in palabras_frecuentes:
-        print(palabra, ":", veces)
-
+    #Llamar la función definida anteriormente
+    palabrasFrecuentes = obtenerPalabrasFrecuentes()
+    print("Las palabras más frecuentes en el texto son las siguientes:")
+    #Ciclo for para imprimir clave y valor del diccionario de palabrasFrecuentes
+    for palabra, veces in palabrasFrecuentes:
+        print(" "+str(palabra)+": "+str(veces)+"")
 ```
 Así se ve el programa al ejecutarse
+
+![image](https://github.com/Artuu1999/Reto-12-Strings/assets/124615034/f8631c44-017d-481c-a4a2-3a44ebdfc6e1)
+
 
 ## Ejemplo No. 4
 Crear un programa en Python que extraiga la cantidad de mensajes recibidos por destinatorio
